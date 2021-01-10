@@ -1,0 +1,10 @@
+name = "SymFinel"
+uuid = "146c701b-3b3e-4a7d-bb2d-8af53ac94760"
+authors = ["pedrosecchi67 <pedrosecchimail@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Calculus = "49dc2e85-a5d0-5ad3-a950-438e2897f1b9"
+FastGaussQuadrature = "442a2c76-b920-505d-bb47-c5924d526838"
+IterTools = "c8e1da08-722c-5040-9ed9-7db0dc04731e"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
