@@ -4,7 +4,7 @@
 
 It allows you to generate integration functions for equations in finite elements of any geometry, number of dimensions, order and interpolation function, without having to rewrite your code to change these details once the residual definition is made.
 
-**Use SymFinel if you want to enjoy Julia's metaprogramming capabilities to generate finite element residuals for a great variaty of formulations, with a small amout of changes to your code.**
+**Use SymFinel if you want to enjoy Julia's metaprogramming capabilities to generate finite element residuals for a great variety of formulations, with a small amout of changes to your code.**
 
 ## An Example
 
