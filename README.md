@@ -8,7 +8,11 @@ It allows you to generate integration functions for equations in finite elements
 
 ## An Example
 
-To obtain the residual of $\partial u/\partial x-v=0$, in a triangular, simplex element using `SymFinel`, you can follow the steps below.
+To obtain the residual of 
+
+![equation](https://latex.codecogs.com/gif.latex?%5Cpartial%20u/%5Cpartial%20x-v%3D0)
+
+In a triangular, simplex element using `SymFinel`, you can follow the steps below.
 
 ### Interpolation Functions
 
@@ -49,7 +53,7 @@ DOFs=[
 ]
 ```
 
-would incurr that input such as the following was used for interpolation for variable `u`:
+would incur that input such as the following should be used for interpolation of variable `u`:
 
 ```
 us=[
@@ -91,7 +95,17 @@ dmn=Domain(
 
 ### Creating Finite Elements
 
-To create a finite element with corners $(x, y)=(1, 1)$, $(2, 1)$ and $(2, 2)$, we can use:
+To create a finite element with corners
+
+![equation](https://latex.codecogs.com/gif.latex?%28x%2C%20y%29%3D%281%2C%201%29)
+
+![equation](https://latex.codecogs.com/gif.latex?%282%2C%201%29)
+
+And
+
+![equation](https://latex.codecogs.com/gif.latex?%282%2C%202%29)
+
+We can use:
 
 ```
 fin=Finel(
@@ -108,11 +122,9 @@ fin=Finel(
 
 To obtain the following integral:
 
-$$
-\int w(\partial u/\partial x-v) d\Omega
-$$
+![equation](https://latex.codecogs.com/gif.latex?%5Cint%20w%28%5Cpartial%20u/%5Cpartial%20x-v%29%20d%5COmega)
 
-In which $w$ is a weight function, we can use function `resfun`, defined below:
+In which w is a weight function, we can use function `resfun`, defined below:
 
 ```
 resd=Residual(
@@ -151,11 +163,9 @@ R=resfunc([ws, us], fin, v) # and any other extra_args symbols
 
 For some formulations, one may need to obtain integrals such as:
 
-$$
-\int_{\partial \Omega} w (\partial u/\partial x, v) \cdot \hat{n} d\Gamma
-$$
+![equation](https://latex.codecogs.com/gif.latex?%5Cint_%7B%5Cpartial%20%5COmega%7D%20w%20%28%5Cpartial%20u/%5Cpartial%20x%2C%20v%29%20%5Ccdot%20%5Chat%7Bn%7D%20d%5CGamma)
 
-Evaluated at the frontier of the domain, $\hat{n}$ being an outward facing vector. One can do this by defining a `Residual` function with a vectorial expression:
+Evaluated at the frontier of the domain, n being an outward facing vector. One can do this by defining a `Residual` function with a vectorial expression:
 
 ```
 surface_resd=Residual(
