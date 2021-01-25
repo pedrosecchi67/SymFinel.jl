@@ -91,7 +91,7 @@ function get_interp_linmat(interp::InterpolationFunction, coord_values::Vector{V
 
     vcat(
         [
-            [interp._DOF_analysis_functions[i, j](pt..., z...) 
+            [Base.invokelatest(interp._DOF_analysis_functions[i, j], pt..., z...) 
                 for i=1:size(interp._DOF_analysis_functions, 1), j=1:size(interp._DOF_analysis_functions, 2)]
                     for pt in coord_values
         ]...
